@@ -104,4 +104,4 @@ stompClient.onConnect = (frame) => {
 
 ````
 
-
+Оригинальный [doc/Readme.md](doc/Readme.md).
