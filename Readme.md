@@ -1,5 +1,8 @@
 ### Работа с WebSocket со Spring Boot
 
+В проекте демонстрируется передача текстовых сообщений через веб сокеты. 
+Сообщения, отправляемые из браузера одного компьютера, принимаются в браузерах на других компьютерах.  
+
 Java 21
 Проект из [https://github.com/spring-guides/gs-messaging-stomp-websocket](https://github.com/spring-guides/gs-messaging-stomp-websocket).
 Оригинальный [Readme.adoc](https://github.com/spring-guides/gs-messaging-stomp-websocket/Readme.adoc)
