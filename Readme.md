@@ -60,7 +60,7 @@ WebSocket (веб-сокет) — сетевой протокол передач
 
 Клиент __app.js__ посылает сообщение в __WebSocket__. 
 
-app.js:
+[app.js](https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/resources/static/app.js):
 
 URL __брокера__:
 
@@ -70,7 +70,7 @@ const stompClient = new StompJs.Client({
 });
 ````
 
-StompJS импортирован в index.html: 
+StompJS импортирован в [index.html](https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/resources/static/index.html): 
 
 ````html
 <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
@@ -104,7 +104,7 @@ public class GreetingController {
 }
 ````
 
-__Внимание__ на параметр"/topic/greetings" и на backend, и на frontend.
+__Внимание__ на параметр "/topic/greetings" и на backend, и на frontend.
 
 ### Подписка
 
