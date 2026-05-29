@@ -28,13 +28,12 @@ content-length:0
 В "Greetings" появится "Hello, имя".
 
 После подключения, клиентский браузер будет держать соединение с сервисом. 
-При пропадании связи (на пример при перезагрузке сервиса) клиент будет периодически пытаться с сервисом.
-Результатты переподключения будут отображаться в консоли браузера.
+При пропадании связи (на пример при __перезагрузке сервисА__) клиент будет периодически пытаться с сервисом.
+Результаты переподключения будут отображаться в консоли браузера.
 
-[doc/screen1.png](doc/screen1.png)
+![doc/screen1.png](doc/screen1.png)
 
-
-Далее, вводимые имена будут появляться в списке (index.html <tbody id="greetings">). 
+Далее, вводимые имена будут __появляться__ в списке (index.html <tbody id="greetings">). 
 
 app.js:
 ````javascript
@@ -42,6 +41,9 @@ function showGreeting(message) {
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
 }
 ````
+
+Сообщения появляются __по подписке__, см.ниже "Подписка", "stompClient.subscribe"
+Если открыто несколько браузеров (firefox, chrome и т.д.) и они все подписаны на прием, то сообщения будут появляться __во всех__ из них одновременно.
 
 ### Что такое Web Socket?
 
@@ -72,6 +74,18 @@ StompJS импортирован в index.html:
 ````html
 <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
 ````
+Отправка сообщения в [app.js](https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/resources/static/app.js):
+
+````javascript
+
+function sendName() {
+    stompClient.publish({
+        destination: "/app/hello",
+        body: JSON.stringify({'name': $("#name").val()})
+    });
+}
+
+````
 Это не POST запрос, это что-то типа канала. Открывается соединение (труба) для обмена данными.
 
 Прием сообщений от фронта:
@@ -90,6 +104,8 @@ public class GreetingController {
 ````
 
 __Внимание__ на параметр"/topic/greetings" и на backend, и на frontend.
+
+### Подписка
 
 И подписка и реакция на приём сообщений от сервера (от WebSocket) на стороне клиента (app.js):
 

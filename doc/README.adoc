@@ -227,12 +227,7 @@ modification. You can use it to run this application. The following listing (fro
 `src/main/java/com/example/messagingstompwebsocket/MessagingStompWebsocketApplication.java`)
 shows the application class:
 
-====
-[source,java,tabsize=2]
-----
-include::complete/src/main/java/com/example/messagingstompwebsocket/MessagingStompWebsocketApplication.java[]
-----
-====
+include::https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/java/com/example/messagingstompwebsocket/MessagingStompWebsocketApplication.java
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/spring-boot-application-new-path.adoc[]
 
