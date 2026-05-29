@@ -1,4 +1,4 @@
-package com.example.messagingstompwebsocket;
+package com.example.stompwebsocket;
 
 import static org.junit.jupiter.api.Assertions.*;
 

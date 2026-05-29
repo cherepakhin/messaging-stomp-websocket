@@ -125,3 +125,19 @@ stompClient.onConnect = (frame) => {
 ````
 
 Оригинальный [doc/Readme.md](doc/Readme.md).
+
+### Сборка для использования (FAT JAR)
+
+````shell
+./mvnw clean package
+````
+
+Собранный файл находится в target/messaging-stomp-websocket-0.0.1.jar
+
+Запуск:
+
+````shell
+/usr/lib/jvm/java-1.21.0-openjdk-amd64/bin/java -jar target/messaging-stomp-websocket-0.0.1.jar
+````
+
+[./run_jar.sh](./run_jar.sh)
