@@ -1,7 +1,8 @@
 ### Работа с WebSocket со Spring Boot
 
-В проекте демонстрируется передача текстовых сообщений через веб сокеты. 
-Сообщения, отправляемые из браузера одного компьютера, принимаются в браузерах на других компьютерах.  
+В проекте демонстрируется передача объектов [Greeting.java](https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/java/com/example/stompwebsocket/Greeting.java) через веб сокеты. 
+Сообщения, отправляемые из браузера одного компьютера конвертируются в JSON, отправляются в WebSocket 
+и принимаются клиентами в браузерах на других компьютерах. На frontend используется JavaScript и js библиотеки.  
 
 Java 21
 Проект из [https://github.com/spring-guides/gs-messaging-stomp-websocket](https://github.com/spring-guides/gs-messaging-stomp-websocket).
@@ -126,6 +127,12 @@ stompClient.onConnect = (frame) => {
 
 Оригинальный [doc/Readme.md](doc/Readme.md).
 
+### Тестирование
+
+[GreetingIntegrationTests.java](src/test/java/com/example/stompwebsocket/GreetingIntegrationTests.java)
+
+Это __@SpringBootTest__.
+
 ### Сборка для использования (FAT JAR)
 
 ````shell
@@ -142,12 +149,13 @@ stompClient.onConnect = (frame) => {
 
 [./run_jar.sh](./run_jar.sh)
 
-### Итоговый тест
+### Демонстрация
 
 1. Открыть два браузера и в обоих открыть страницу [http://192.168.1.79:8080/](http://192.168.1.79:8080/), где 192.168.1.79 - IP адрес компьютера с запущенным сервисом.
 2. В обоих браузерах нажать кнопку "Connect".
-2. В одном браузерe установить значение имени пользователя и нажать "Send".
-3. Введенное имя отобразится на страницах обоих броузеров. 
+3. В одном браузерe установить значение имени пользователя и нажать "Send".
+4. Введенное имя отобразится на страницах обоих браузеров. 
 
-Видео демонстрации: doc/demo_use.webm
+Видео демонстрации: [doc/demo_use.webm](doc/demo_use.webm) (формат webm)
+и [Java Spring Boot и WebSocket](https://v.perm.ru/index.php/component/content/article/spring-boot-websocket?catid=15&Itemid=101)
 
