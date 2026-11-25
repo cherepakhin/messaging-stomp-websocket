@@ -1,3 +1,5 @@
+Java 17
+
 ### Работа с WebSocket со Spring Boot
 
 В проекте демонстрируется передача объектов [Greeting.java](https://github.com/cherepakhin/messaging-stomp-websocket/blob/main/src/main/java/com/example/stompwebsocket/Greeting.java) через веб сокеты. 
@@ -18,7 +20,7 @@ Java 21
 ./run.sh
 ````
 
-Открыть: [http://192.168.1.79:8080/](http://192.168.1.79:8080/). __НЕ__ [http://127.0.0.1:8080](http://127.0.0.1:8080)
+Открыть: ОБЯЗАТЕЛЬНО 1.79 !!!! [http://192.168.1.79:8080/](http://192.168.1.79:8080/). __НЕ__ [http://127.0.0.1:8080](http://127.0.0.1:8080)
 В консоль __браузера__ выведется информация о соединении:
 
 ````text
@@ -153,9 +155,11 @@ stompClient.onConnect = (frame) => {
 
 1. Открыть два браузера и в обоих открыть страницу [http://192.168.1.79:8080/](http://192.168.1.79:8080/), где 192.168.1.79 - IP адрес компьютера с запущенным сервисом.
 2. В обоих браузерах нажать кнопку "Connect".
-3. В одном браузерe установить значение имени пользователя и нажать "Send".
+3. В одном браузере установить значение имени пользователя и нажать "Send".
 4. Введенное имя отобразится на страницах обоих браузеров. 
 
 Видео демонстрации: [doc/demo_use.webm](doc/demo_use.webm) (формат webm)
 и [Java Spring Boot и WebSocket](https://v.perm.ru/index.php/component/content/article/spring-boot-websocket?catid=15&Itemid=101)
 
+
+Без JavaScript тут никак!

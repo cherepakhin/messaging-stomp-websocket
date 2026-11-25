@@ -1,5 +1,5 @@
 const stompClient = new StompJs.Client({
-    brokerURL: 'ws://192.168.1.79:8080/gs-guide-websocket'
+    brokerURL: 'ws://192.168.1.79:8960/gs-guide-websocket'
 });
 
 stompClient.onConnect = (frame) => {
@@ -20,6 +20,8 @@ stompClient.onStompError = (frame) => {
 };
 
 function setConnected(connected) {
+    console.log("setConnected");
+    console.log(connected);
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
     if (connected) {
@@ -32,6 +34,7 @@ function setConnected(connected) {
 }
 
 function connect() {
+    console.log("Connect");
     stompClient.activate();
 }
 
@@ -42,6 +45,7 @@ function disconnect() {
 }
 
 function sendName() {
+    console.log("sendName");
     stompClient.publish({
         destination: "/app/hello",
         body: JSON.stringify({'name': $("#name").val()})
@@ -49,6 +53,8 @@ function sendName() {
 }
 
 function showGreeting(message) {
+    console.log("showGreeting");
+    console.log(message);
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
 }
 
